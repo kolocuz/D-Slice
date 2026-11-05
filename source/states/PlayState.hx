@@ -501,7 +501,7 @@ class PlayState extends MusicBeatState
 	];
 
 	public static var canResync:Bool = false;
-	public static var loaded:Bool = false;
+	public static var loadedSong:String = '';
 
 	override public function create()
 	{
@@ -2001,7 +2001,10 @@ class PlayState extends MusicBeatState
 
 		Note.chartArrowSkin = SONG.arrowSkin;
 
-		if (!loaded) {
+		if (loadedSong != songName) {
+			unspawnNotes = [];
+            spamNotes = [];
+			
 			var sectionsData:Array<SwagSection> = SONG.notes;
 			var daBpm:Float = Conductor.bpm;
 
@@ -2222,6 +2225,8 @@ class PlayState extends MusicBeatState
 
 			Eseq.pln('Sorting Notes...');
 			ArraySort.sort(unspawnNotes, sortByTime);
+
+			loadedSong = songName;
 		} else {
 			trace("Chart loading has been skipped since unspawnNotes is already in the memory!");
 		}
@@ -2231,7 +2236,7 @@ class PlayState extends MusicBeatState
 			for (i in 0...event[1].length)
 				makeEvent(event, i);
 
-		generatedMusic = loaded = true;
+		generatedMusic = true;
 		Eseq.pln('Ready to PLAY!');
 	}
 
@@ -4730,7 +4735,7 @@ class PlayState extends MusicBeatState
 		}
 		
 		unspawnNotes.resize(0);
-		loaded = false;
+	    loadedSong = '';
 		return true;
 	}
 
