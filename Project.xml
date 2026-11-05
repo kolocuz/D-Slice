@@ -317,6 +317,7 @@ xsi:schemaLocation="http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/
 	<!-- what is this -->
 	<define name="DISABLE_CHART_EDITOR" />
 
+
 	<!-- _________________________________ Custom _______________________________ -->
 
 	<section if="PROFILE_BUILD">
