@@ -1,41 +1,29 @@
-name: Build Windows
+name: Build the game
 
 on:
   push:
     branches: [ main-dev ]
   workflow_dispatch:
 
-env:
-  HAXE_VERSION: 4.3.6
-
 jobs:
-  build-windows:
-    name: Windows Build
-    runs-on: windows-2022
-    permissions:
-      contents: write
+  BuildCaches:
+    name: Setup Dependencies
+    uses: ./.github/workflows/dependencies.yml
+    with:
+      CACHE_NAME: Windows-Cache
+      os: windows-2022
+      setupScript: cmd /c "cd setup && call windows.bat"
 
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Setup Haxe
-        uses: krdlab/setup-haxe@master
-        with:
-          haxe-version: ${{ env.HAXE_VERSION }}
-
-      - name: Install custom dependencies
-        shell: cmd
-        run: |
-          cd setup
-          call windows.bat
-
-      - name: Compile Game
-        run: haxelib run lime build windows
-
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: windows-build
-          path: export/windows/bin/
-          if-no-files-found: error
+  BuildWindows:
+    name: Windows
+    needs: BuildCaches
+    uses: ./.github/workflows/build.yml
+    with:
+      name: Windows
+      os: windows-2022
+      buildArgs: windows
+      exportPath: windows
+      artifactName: H-Slice+JS_windows
+      artifactPath: export\release\windows\bin\*
+      cachePath: Windows-Build-Cache
+      cacheLibrariesPath: Windows-Cache
