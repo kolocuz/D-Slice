@@ -1,38 +1,36 @@
-name: Build Game
+name: Build Windows
 
 on:
   push:
     branches: [ main-dev ]
   workflow_dispatch:
 
+env:
+  HAXE_VERSION: 4.3.6
+
 jobs:
   build-windows:
-    runs-on: windows-latest
+    name: Windows Build
+    runs-on: windows-2022
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
       - name: Setup Haxe
-        uses: krdlab/setup-haxe@v1
+        uses: krdlab/setup-haxe@master
         with:
-          haxe-version: 4.2.5
+          haxe-version: ${{ env.HAXE_VERSION }}
 
-      - name: Install dependencies
+      - name: Install custom dependencies
+        shell: cmd
         run: |
-          haxelib install hxcpp --quiet
-          haxelib install lime --quiet
-          haxelib install openfl --quiet
-          haxelib install flixel --quiet
-          haxelib install flixel-addons --quiet
-          haxelib install flixel-ui --quiet
-          haxelib install hscript-iris --quiet
-          # Если сборка упадет, ищи в исходниках файл setup/windows.bat 
-          # и добавь сюда те библиотеки, которых там не хватает
+          cd setup
+          call windows.bat
 
-      - name: Setup Lime
-        run: haxelib run lime setup
-
-      - name: Build with Lime
+      - name: Compile Game
         run: haxelib run lime build windows
 
       - name: Upload Artifact
@@ -40,3 +38,4 @@ jobs:
         with:
           name: windows-build
           path: export/windows/bin/
+          if-no-files-found: error
