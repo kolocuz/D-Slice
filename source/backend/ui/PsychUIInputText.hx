@@ -603,7 +603,7 @@ class PsychUIInputText extends FlxSpriteGroup
 	function set_passwordMask(v:Bool)
 	{
 		passwordMask = v;
-		text = text;
+		
 		return passwordMask;
 	}
 

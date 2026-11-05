@@ -32,7 +32,7 @@ class Popup extends FlxSprite {
         if (Paths.popUpFramesMap.exists(target)) {
             this.frames = Paths.popUpFramesMap.get(target);
             return this;
-        } else {
+        } {
             texture = cast { loadGraphic(Paths.image(target)); }
             Paths.popUpFramesMap.set(target, this.frames);
             return texture;

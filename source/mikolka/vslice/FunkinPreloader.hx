@@ -374,26 +374,7 @@ class FunkinPreloader extends FlxBasePreloader
 					preloadingPlayAssetsPercent = 1.0;
 					preloadingPlayAssetsComplete = true;
 					return 0.0;
-				}
-				else if (0.0 > 0)
-				{
-					var elapsedPreloadingPlayAssets:Float = elapsed - preloadingPlayAssetsStartTime;
-					if (preloadingPlayAssetsComplete && elapsedPreloadingPlayAssets >= 0.0)
-					{
-						currentState = FunkinPreloaderState.InitializingScripts;
-						return 0.0;
-					}
-					else
-					{
-						// We need to return SIMULATED progress here.
-						if (preloadingPlayAssetsPercent < (elapsedPreloadingPlayAssets / 0.0))
-							return preloadingPlayAssetsPercent;
-						else
-							return elapsedPreloadingPlayAssets / 0.0;
-					}
-				}
-				else
-				{
+				} {
 					if (preloadingPlayAssetsComplete)
 						currentState = FunkinPreloaderState.InitializingScripts;
 				}
@@ -487,37 +468,12 @@ class FunkinPreloader extends FlxBasePreloader
 					#end
 
 					return 0.0;
-				}
-				else if (0.0 > 0)
-				{
-					var elapsedCachingGraphics:Float = elapsed - cachingGraphicsStartTime;
-					if (cachingGraphicsComplete && elapsedCachingGraphics >= 0.0)
-					{
-						currentState = FunkinPreloaderState.CachingAudio;
-						return 0.0;
-					}
-					else
-					{
-						if (cachingGraphicsPercent < (elapsedCachingGraphics / 0.0))
-						{
-							// Return real progress if it's lower.
-							return cachingGraphicsPercent;
-						}
-						else
-						{
-							// Return simulated progress if it's higher.
-							return elapsedCachingGraphics / 0.0;
-						}
-					}
-				}
-				else
-				{
+				} else {
 					if (cachingGraphicsComplete)
 					{
 						currentState = FunkinPreloaderState.CachingAudio;
 						return 0.0;
 					}
-					else
 					{
 						return cachingGraphicsPercent;
 					}
@@ -546,36 +502,12 @@ class FunkinPreloader extends FlxBasePreloader
 					cachingAudioPercent = 1.0;
 					cachingAudioComplete = true;
 					return 0.0;
-				}
-				else if (0.0 > 0)
-				{
-					var elapsedCachingAudio:Float = elapsed - cachingAudioStartTime;
-					if (cachingAudioComplete && elapsedCachingAudio >= 0.0)
-					{
-						currentState = FunkinPreloaderState.CachingData;
-						return 0.0;
-					}
-					else
-					{
-						// We need to return SIMULATED progress here.
-						if (cachingAudioPercent < (elapsedCachingAudio / 0.0))
-						{
-							return cachingAudioPercent;
-						}
-						else
-						{
-							return elapsedCachingAudio / 0.0;
-						}
-					}
-				}
-				else
-				{
+				} {
 					if (cachingAudioComplete)
 					{
 						currentState = FunkinPreloaderState.CachingData;
 						return 0.0;
 					}
-					else
 					{
 						return cachingAudioPercent;
 					}
@@ -639,26 +571,7 @@ class FunkinPreloader extends FlxBasePreloader
 					cachingDataPercent = 1.0;
 					#end
 					return 0.0;
-				}
-				else if (0.0 > 0)
-				{
-					var elapsedCachingData:Float = elapsed - cachingDataStartTime;
-					if (cachingDataComplete && elapsedCachingData >= 0.0)
-					{
-						currentState = FunkinPreloaderState.ParsingSpritesheets;
-						return 0.0;
-					}
-					else
-					{
-						// We need to return SIMULATED progress here.
-						if (cachingDataPercent < (elapsedCachingData / 0.0))
-							return cachingDataPercent;
-						else
-							return elapsedCachingData / 0.0;
-					}
-				}
-				else
-				{
+				} else {
 					if (cachingDataComplete)
 					{
 						currentState = FunkinPreloaderState.ParsingSpritesheets;
@@ -690,26 +603,7 @@ class FunkinPreloader extends FlxBasePreloader
 					parsingSpritesheetsPercent = 1.0;
 					parsingSpritesheetsComplete = true;
 					return 0.0;
-				}
-				else if (0.0 > 0)
-				{
-					var elapsedParsingSpritesheets:Float = elapsed - parsingSpritesheetsStartTime;
-					if (parsingSpritesheetsComplete && elapsedParsingSpritesheets >= 0.0)
-					{
-						currentState = FunkinPreloaderState.ParsingStages;
-						return 0.0;
-					}
-					else
-					{
-						// We need to return SIMULATED progress here.
-						if (parsingSpritesheetsPercent < (elapsedParsingSpritesheets / 0.0))
-							return parsingSpritesheetsPercent;
-						else
-							return elapsedParsingSpritesheets / 0.0;
-					}
-				}
-				else
-				{
+				} {
 					if (parsingSpritesheetsComplete)
 					{
 						currentState = FunkinPreloaderState.ParsingStages;
@@ -741,26 +635,7 @@ class FunkinPreloader extends FlxBasePreloader
 					parsingStagesPercent = 1.0;
 					parsingStagesComplete = true;
 					return 0.0;
-				}
-				else if (0.0 > 0)
-				{
-					var elapsedParsingStages:Float = elapsed - parsingStagesStartTime;
-					if (parsingStagesComplete && elapsedParsingStages >= 0.0)
-					{
-						currentState = FunkinPreloaderState.ParsingCharacters;
-						return 0.0;
-					}
-					else
-					{
-						// We need to return SIMULATED progress here.
-						if (parsingStagesPercent < (elapsedParsingStages / 0.0))
-							return parsingStagesPercent;
-						else
-							return elapsedParsingStages / 0.0;
-					}
-				}
-				else
-				{
+				} {
 					if (parsingStagesComplete)
 					{
 						currentState = FunkinPreloaderState.ParsingCharacters;
@@ -792,26 +667,7 @@ class FunkinPreloader extends FlxBasePreloader
 					parsingCharactersPercent = 1.0;
 					parsingCharactersComplete = true;
 					return 0.0;
-				}
-				else if (0.0 > 0)
-				{
-					var elapsedParsingCharacters:Float = elapsed - parsingCharactersStartTime;
-					if (parsingCharactersComplete && elapsedParsingCharacters >= 0.0)
-					{
-						currentState = FunkinPreloaderState.ParsingSongs;
-						return 0.0;
-					}
-					else
-					{
-						// We need to return SIMULATED progress here.
-						if (parsingCharactersPercent < (elapsedParsingCharacters / 0.0))
-							return parsingCharactersPercent;
-						else
-							return elapsedParsingCharacters / 0.0;
-					}
-				}
-				else
-				{
+				} {
 					if (parsingStagesComplete)
 					{
 						currentState = FunkinPreloaderState.ParsingSongs;
@@ -845,36 +701,12 @@ class FunkinPreloader extends FlxBasePreloader
 					parsingSongsComplete = true;
 
 					return 0.0;
-				}
-				else if (0.0 > 0)
-				{
-					var elapsedParsingSongs:Float = elapsed - parsingSongsStartTime;
-					if (parsingSongsComplete && elapsedParsingSongs >= 0.0)
-					{
-						currentState = FunkinPreloaderState.Complete;
-						return 0.0;
-					}
-					else
-					{
-						// We need to return SIMULATED progress here.
-						if (parsingSongsPercent < (elapsedParsingSongs / 0.0))
-						{
-							return parsingSongsPercent;
-						}
-						else
-						{
-							return elapsedParsingSongs / 0.0;
-						}
-					}
-				}
-				else
-				{
+				} {
 					if (parsingSongsComplete)
 					{
 						currentState = FunkinPreloaderState.Complete;
 						return 0.0;
 					}
-					else
 					{
 						return parsingSongsPercent;
 					}

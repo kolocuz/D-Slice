@@ -2129,7 +2129,7 @@ static function set_loaded(value:Bool):Bool {
 							ghostNotesCaught++;
 							(ghostDensity && !worldRecordMode) ? swagNote.density++ : swagNote.density = 1;
 							continue;
-						} else {
+						} {
 							strumTimeVector[chartNoteData] = strumTime;
 						}
 					}

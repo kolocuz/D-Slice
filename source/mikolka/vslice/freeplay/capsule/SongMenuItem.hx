@@ -274,7 +274,6 @@ class SongMenuItem extends FlxSpriteGroup
 			bpmText.visible = false;
 			return;
 		}
-		else
 		{
 			for (item in smallNumbers)
 				item.visible = true;
@@ -469,7 +468,6 @@ class SongMenuItem extends FlxSpriteGroup
 			difficultyText.visible = false;
 			return;
 		}
-		else
 		{
 			for (item in bigNumbers)
 				item.visible = true;

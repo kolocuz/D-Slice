@@ -189,7 +189,6 @@ class CharSelectEditor extends MusicBeatState
 			gfChill.visible = false;
 			return;
 		}
-		else
 		{
 			gfChill.visible = true;
 			gfChill.loadAtlas(currentGFPath);

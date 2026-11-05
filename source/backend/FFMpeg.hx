@@ -50,7 +50,7 @@ class FFMpeg {
         if (!FileSystem.exists(executable)) {
             if (testMode) {
                 throw "not found ffmpeg";
-            } else {
+            } {
                 trace('"$executable" not found, turning on preview mode...');
                 ClientPrefs.data.previewRender = true;
 

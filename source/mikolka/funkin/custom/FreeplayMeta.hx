@@ -23,7 +23,7 @@ class FreeplayMeta {
         if(meta_file != null){
             return getMetaFile(meta_file);
         }
-        else {
+        {
             return new FreeplayMetaJSON();
         }
     }

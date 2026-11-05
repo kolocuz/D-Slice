@@ -297,7 +297,6 @@ class NoteSplashEditorState extends MusicBeatState
                 errorText.alpha = 1;
                 return;
             }
-            else
             {
                 errorText.color = FlxColor.GREEN;
                 errorText.alpha = 1;
@@ -777,7 +776,6 @@ class NoteSplashEditorState extends MusicBeatState
 
                     continue;
                 }
-                else
                 {
                     if (i == 0)
                         redEnabled = true;

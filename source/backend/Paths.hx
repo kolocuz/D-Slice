@@ -421,7 +421,6 @@ class Paths
 		{
 			return FlxAtlasFrames.fromSparrow(imageLoaded, NativeFileSystem.getContent(myXml));
 		}
-		else
 		{
 			var myJson:Dynamic = getPath('images/$key.json', TEXT, parentFolder, true);
 			if(NativeFileSystem.exists(myJson))
