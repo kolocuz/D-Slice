@@ -501,7 +501,19 @@ class PlayState extends MusicBeatState
 	];
 
 	public static var canResync:Bool = false;
-	public static var loadedSong:String = '';
+public static var loadedSong:String = '';
+public static var loaded(get, set):Bool;
+
+static function get_loaded():Bool {
+    return loadedSong != '';
+}
+
+static function set_loaded(value:Bool):Bool {
+    if (!value) {
+        loadedSong = ''; 
+    }
+    return value;
+}
 
 	override public function create()
 	{
