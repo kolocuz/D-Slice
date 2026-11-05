@@ -5,29 +5,27 @@ on:
     branches: [ main-dev ]
   workflow_dispatch:
 
-permissions:
-  pull-requests: write
-  contents: read
-
 jobs:
   BuildCaches:
-    name: Setup Dependencies
+    name: Desktop Cache
+    permissions: write-all
     uses: ./.github/workflows/dependencies.yml
     with:
-      CACHE_NAME: Windows-Cache
       os: windows-2022
+      CACHE_NAME: H-Slice+JS.desktop-cache
       setupScript: cmd /c "cd setup && call windows.bat"
 
-  BuildWindows:
+  BuildDesktop:
     name: Windows
     needs: BuildCaches
+    permissions: write-all
     uses: ./.github/workflows/build.yml
     with:
       name: Windows
       os: windows-2022
       buildArgs: windows
       exportPath: windows
-      artifactName: H-Slice+JS_windows
+      artifactName: H-Slice+JS_0.2.4_windows
       artifactPath: export\release\windows\bin\*
-      cachePath: Windows-Build-Cache
-      cacheLibrariesPath: Windows-Cache
+      cachePath: H-Slice+JS.build-windows
+      cacheLibrariesPath: H-Slice+JS.desktop-cache
