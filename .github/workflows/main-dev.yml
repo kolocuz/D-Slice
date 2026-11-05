@@ -2,8 +2,8 @@ name: Build Game
 
 on:
   push:
-    branches: [ main-dev ]   # Запускать при пуше в ветку main-dev
-  workflow_dispatch:          # Позволяет запускать сборку вручную кнопкой
+    branches: [ main-dev ]
+  workflow_dispatch:
 
 jobs:
   build-windows:
