@@ -317,9 +317,6 @@ xsi:schemaLocation="http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/
 	<!-- what is this -->
 	<!-- <define name="DISABLE_CHART_EDITOR" /> -->
 
-    <haxedef name="dce-debug" />
-	<haxedef name="dce" value="full" />
-
 
 	<!-- _________________________________ Custom _______________________________ -->
 
