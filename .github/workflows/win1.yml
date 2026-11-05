@@ -1,9 +1,9 @@
 name: Build Windows Only
 
 on:
-  workflow_dispatch: # Позволяет запускать кнопкой из вкладки Actions
+  workflow_dispatch:
   push:
-    branches: [developmentalist] # Будет запускаться при пуше в эту ветку
+    branches: [developmentalist]
 
 jobs:
   BuildCaches:
