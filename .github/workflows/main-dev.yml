@@ -1,0 +1,42 @@
+name: Build Game
+
+on:
+  push:
+    branches: [ main-dev ]   # Запускать при пуше в ветку main-dev
+  workflow_dispatch:          # Позволяет запускать сборку вручную кнопкой
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Haxe
+        uses: krdlab/setup-haxe@v1
+        with:
+          haxe-version: 4.2.5
+
+      - name: Install dependencies
+        run: |
+          haxelib install hxcpp --quiet
+          haxelib install lime --quiet
+          haxelib install openfl --quiet
+          haxelib install flixel --quiet
+          haxelib install flixel-addons --quiet
+          haxelib install flixel-ui --quiet
+          haxelib install hscript-iris --quiet
+          # Если сборка упадет, ищи в исходниках файл setup/windows.bat 
+          # и добавь сюда те библиотеки, которых там не хватает
+
+      - name: Setup Lime
+        run: haxelib run lime setup
+
+      - name: Build with Lime
+        run: haxelib run lime build windows
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-build
+          path: export/windows/bin/   # Путь к готовому .exe
