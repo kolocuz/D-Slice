@@ -12,7 +12,7 @@ jobs:
     uses: ./.github/workflows/dependencies.yml
     with:
       os: windows-2022
-      CACHE_NAME: H-Slice+JS.desktop-cache
+      CACHE_NAME: K-Slice.desktop-cache
       setupScript: cmd /c "cd setup && call windows.bat"
 
   BuildDesktop:
@@ -25,7 +25,7 @@ jobs:
       os: windows-2022
       buildArgs: windows
       exportPath: windows
-      artifactName: H-Slice+JS_0.2.4_windows
+      artifactName: K-Slice_0.0.1_windows
       artifactPath: export\release\windows\bin\*
-      cachePath: H-Slice+JS.build-windows
-      cacheLibrariesPath: H-Slice+JS.desktop-cache
+      cachePath: K-Slice.build-windows
+      cacheLibrariesPath: K+Slice.desktop-cache
