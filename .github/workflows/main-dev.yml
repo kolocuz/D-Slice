@@ -12,7 +12,7 @@ jobs:
     uses: ./.github/workflows/dependencies.yml
     with:
       os: windows-2022
-      CACHE_NAME: K-Slice.desktop-cache
+      CACHE_NAME: K-Slice2.desktop-cache
       setupScript: cmd /c "cd setup && call windows.bat"
 
   BuildDesktop:
@@ -27,5 +27,5 @@ jobs:
       exportPath: windows
       artifactName: K-Slice_0.0.1_windows
       artifactPath: export\release\windows\bin\*
-      cachePath: K-Slice.build-windows
-      cacheLibrariesPath: K-Slice.desktop-cache
+      cachePath: K-Slice2.build-windows
+      cacheLibrariesPath: K-Slice2.desktop-cache
