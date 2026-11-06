@@ -6,7 +6,7 @@ xsi:schemaLocation="http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/
 	<!-- _________________________ Application Settings _________________________ -->
 	<app unless="PROFILE_BUILD || mobile" title="Friday Night Funkin': K-Slice" file="K-Slice" packageName="com.kolocuz.kslice" package="com.kolocuz.kslice" main="Main" version="0.0.1" company="Kolocuz" />
 	<app if="PROFILE_BUILD" title="K-Slice Engine Profiling build" file="K-Slice" packageName="com.kolocuz.testKslice" package="com.kolocuz.testKslice" main="Main" version="0.0.1"  company="Kanny" />
-	<app if="mobile" unless="PROFILE_BUILD" title="K-Slice Engine" file="K-Slice" packageName="com.kolocuz.dslice" package="com.kolocuz.kslice" main="Main" version="0.0.1"  company="Kolocuz" />
+	<app if="mobile" unless="PROFILE_BUILD" title="K-Slice Engine" file="K-Slice" packageName="com.kolocuz.kslice" package="com.kolocuz.kslice" main="Main" version="0.0.1"  company="Kolocuz" />
 
 	<!--Switch Export with Unique ApplicationID and Icon-->
 	<set name="APP_ID" value="0x0100f6c013bbc000" />
