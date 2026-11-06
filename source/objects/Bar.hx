@@ -99,8 +99,8 @@ class Bar extends FlxSpriteGroup
 		barCenter = leftBar.x + leftSize + barOffset.x;
 
 		// flixel is retarded
-		
-		
+		leftBar.clipRect = leftBar.clipRect;
+		rightBar.clipRect = rightBar.clipRect;
 	}
 
 	public function regenerateClips()

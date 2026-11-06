@@ -5391,7 +5391,9 @@ static function set_loaded(value:Bool):Bool {
 		}
 
 		var lastCombo:Float = combo;
-		combo = 0;
+if (!changePopup) {
+    combo = 0;
+}
 
 		if (opponentChart)
 		    health += subtract * healthLoss;
