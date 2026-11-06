@@ -28,4 +28,4 @@ jobs:
       artifactName: K-Slice_0.0.1_windows
       artifactPath: export\release\windows\bin\*
       cachePath: K-Slice.build-windows
-      cacheLibrariesPath: K+Slice.desktop-cache
+      cacheLibrariesPath: K-Slice.desktop-cache
