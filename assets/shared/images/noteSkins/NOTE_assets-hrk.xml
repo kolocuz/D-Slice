@@ -3,7 +3,7 @@
 <SubTexture name="arrowDOWN0000" x="749" y="0" width="154" height="154" frameX="0" frameY="0" frameWidth="154" frameHeight="154" />
 <SubTexture name="arrowLEFT0000" x="749" y="154" width="154" height="154" frameX="0" frameY="0" frameWidth="154" frameHeight="154" />
 <SubTexture name="arrowRIGHT0000" x="749" y="308" width="154" height="154" frameX="0" frameY="0" frameWidth="154" frameHeight="154" />
-<SubTexture name="arrowUP0000" x="749" y="462" width="154" height="154" frameX="0" frameY="0" frameWidth="154" frameHeight="154" />
+<SubTexture name="arrowUP0000" x="749" y="463" width="154" height="154" frameX="0" frameY="0" frameWidth="154" frameHeight="154" />
 <SubTexture name="blue hold end0000" x="749" y="616" width="60" height="60" frameX="0" frameY="0" frameWidth="60" frameHeight="60" />
 <SubTexture name="blue hold piece0000" x="809" y="616" width="60" height="60" frameX="0" frameY="0" frameWidth="60" frameHeight="60" />
 <SubTexture name="blue0000" x="0" y="747" width="154" height="154" frameX="0" frameY="0" frameWidth="154" frameHeight="154" />
