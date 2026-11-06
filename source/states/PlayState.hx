@@ -2015,8 +2015,14 @@ static function set_loaded(value:Bool):Bool {
 
 		if (loadedSong != songName) {
 			unspawnNotes = [];
-            spamNotes = [];
+                        spamNotes = [];
 			
+    #if cpp
+    cpp.vm.Gc.run(true); 
+    #if debug
+    cpp.vm.Gc.trace(1, "free");
+    #end
+    #end
 			var sectionsData:Array<SwagSection> = SONG.notes;
 			var daBpm:Float = Conductor.bpm;
 
@@ -4750,6 +4756,12 @@ static function set_loaded(value:Bool):Bool {
 		
 		unspawnNotes.resize(0);
 	    loadedSong = '';
+    #if cpp
+    cpp.vm.Gc.run(true); 
+    #if debug
+    cpp.vm.Gc.trace(1, "free");
+    #end
+    #end
 		return true;
 	}
 
