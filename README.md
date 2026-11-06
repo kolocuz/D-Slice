@@ -1,24 +1,24 @@
 <h1 align="center">
   <br>
-  <a href="https://github.com/HRK-EXEX/H-Slice">
-    <img src="/art/desktop/iconOG.png" alt="H-Slice" width="150">
+  <a href="https://github.com/kolocuz/K-Slice">
+    <img src="/art/desktop/iconOG.png" alt="K-Slice" width="150">
   </a>
   <br>
-  <b>D-Slice Engine</b>
+  <b>K-Slice Engine</b>
   <br>
 </h1>
 
 <p align="center">
-  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/HRK-EXEX/H-Slice">
-  <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/w/HRK-EXEX/H-Slice">
-  <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/HRK-EXEX/H-Slice">
+  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/kolocuz/K-Slice">
+  <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/w/kolocuz/K-Slice">
+  <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/kolocuz/K-Slice">
   <img src="https://img.shields.io/badge/LUA-262626?style=for-the-badge&logo=lua">
   <img src="https://img.shields.io/badge/-HAXE-262626.svg?logo=haxe&style=for-the-badge">
 </p>
 
 ## Introduction
 
-Welcome to **D-Slice** (a fork from H-Slice+JS), a Friday Night Funkin' engine optimized for handling and playing large charts efficiently.
+Welcome to **K-Slice** (a fork from H-Slice+JS and D-Slice), a Friday Night Funkin' engine optimized for handling and playing large charts efficiently.
 
 This engine is still H-Slice+JS Engine but builds upon features from JS Engine and may include new features in the future.
 
