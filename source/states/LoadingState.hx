@@ -139,7 +139,6 @@ class LoadingState extends MusicBeatState
 						trace('initialized hscript interp successfully: $scriptPath');
 						return super.create();
 					}
-					else
 					{
 						trace('"$scriptPath" contains no \"onCreate" function, stopping script.');
 						gotError = true;

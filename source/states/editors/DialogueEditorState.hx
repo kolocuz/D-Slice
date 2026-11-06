@@ -210,7 +210,7 @@ class DialogueEditorState extends MusicBeatState implements PsychUIEventHandler.
 	function reloadCharacter() {
 		var characterXPadding = Std.int((FlxG.width-FlxG.initialWidth)/2);
 		character.frames = Paths.getSparrowAtlas('dialogue/' + character.jsonFile.image);
-		character.jsonFile = character.jsonFile;
+		
 		character.reloadAnimations();
 		character.setGraphicSize(Std.int(character.width * DialogueCharacter.DEFAULT_SCALE * character.jsonFile.scale));
 		character.updateHitbox();

@@ -41,6 +41,14 @@ class CreditsState extends MusicBeatState
 		#end
 
 		var defaultList:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
+			['K-Slice Engine Team'],
+			['Kolocuz',				'kolocuz',			'Main Developer and Founder of K-Slice',						'https://github.com/kolocuz/K-Slice',	'FF5555'],
+			[''],
+
+			['D-Slice Engine Team'],
+			['DannyFNF',			'dannyfnf',			'Main Developer and Founder of D-Slice',						'https://github.com/DannyFNF/D-Slice',	'00AAFF'],
+			[''],
+
 			['H-Slice + JS Engine Team'],
 			['HRK.EXEX',			'hrk',				'Main Developer and Founder of H-Slice + JS Engine',				'https://www.youtube.com/@hk.3x3x2nd3',		'1890ff'],
 			['Jordan Santiago',			'jor',				'Co-Developer of H-Slice + JS Engine',				'https://www.youtube.com/@JordanSantiago',		'1890ff'],

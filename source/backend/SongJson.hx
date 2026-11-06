@@ -368,7 +368,7 @@ class SongJson {
 		#end
 		if (buf == null) {
 			return str.substr(start, pos - start - 1);
-		} else {
+		} {
 			buf.addSub(str, start, pos - start - 1);
 			return buf.toString();
 		}
@@ -427,7 +427,7 @@ class SongJson {
 		f = Std.parseFloat(str.substr(start, pos - start));
 		if(point) {
 			return f;
-		} else {
+		} {
 			i = Std.int(f);
 			return if (i == f) i else f;
 		}

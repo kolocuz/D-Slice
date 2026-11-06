@@ -371,7 +371,7 @@ class VisualsSettingsSubState extends BaseOptionsMenu
 			BOOL);
 		addOption(option);
 
-		var option:Option = new Option('Combo <-> Notes',
+		var option:Option = new Option('Combo --> Notes',
 			"If checked, the combo number will become a note counter instead.\nIt counts both opponent and player note hits.",
 			'changeNotes',
 			BOOL);

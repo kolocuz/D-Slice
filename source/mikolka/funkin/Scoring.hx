@@ -78,7 +78,6 @@ class Scoring
 		{
 			return ScoringRank.GOOD;
 		}
-		else
 		{
 			return ScoringRank.SHIT;
 		}

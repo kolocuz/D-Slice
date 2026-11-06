@@ -26,7 +26,6 @@ jobs:
         id: load-lib-cache
         uses: actions/cache@v3
         with:
-          # not caching the bin folder to prevent asset duplication and stuff like that
           key:  ${{ inputs.CACHE_NAME }}
           enableCrossOsArchive: true
           path: |
@@ -52,10 +51,14 @@ jobs:
         if: steps.load-lib-cache.outputs.cache-hit != 'true'
         run: ${{ inputs.setupScript }}
 
-      - name: Install hxvlc for windows
+      - name: Install hxvlc
+        if: steps.load-lib-cache.outputs.cache-hit != 'true'
         run: haxelib install hxvlc 2.2.2 --quiet
+
+      - name: Install VLC dependencies (Linux)
         if: inputs.os == 'ubuntu-latest' && steps.load-lib-cache.outputs.cache-hit != 'true'
-   
+        run: sudo apt-get update && sudo apt-get install -y vlc libvlc-dev libvlccore-dev vlc-bin
+
       - name: Uploading new cache
         if: steps.load-lib-cache.outputs.cache-hit != 'true'
         uses: actions/cache@v3

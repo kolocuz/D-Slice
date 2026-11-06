@@ -90,7 +90,7 @@ class PsychCamera extends FlxCamera
 				}
 			}
 
-			if ((target is FlxSprite))
+			if (target is FlxSprite)
 			{
 				if (_lastTargetPosition == null)
 				{

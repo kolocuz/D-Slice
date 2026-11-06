@@ -82,7 +82,6 @@ class AlbumRoll extends FlxSpriteGroup
       difficultyStars.stars.visible = false;
       return;
     }
-    else
     {
       this.visible = true;
     }

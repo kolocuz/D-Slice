@@ -101,7 +101,7 @@ class ResultsPropsGrp extends FlxTypedSpriteGroup<FlxSprite> {
                 if(Paths.fileExists("images/"+FunkinPath.stripLibrary(data.assetPath)+".xml",TEXT)){
                     return new ResultsSparrowSprite(data);
                 }
-                else{
+                {
                     if(showErrors)
                         UserErrorSubstate.makeMessage("Failed to load Sparrow",'${FunkinPath.stripLibrary(data.assetPath)}/n/nIs not a valid Sparrow sprite');
                 }
@@ -110,7 +110,7 @@ class ResultsPropsGrp extends FlxTypedSpriteGroup<FlxSprite> {
                 if(Paths.fileExists("images/"+FunkinPath.stripLibrary(data.assetPath)+"/Animation.json",TEXT)){
                     return new ResultsAtlasSprite(data);
                 }
-                else{
+                {
                     if(showErrors)
                         UserErrorSubstate.makeMessage("Failed to load Atlas",'${FunkinPath.stripLibrary(data.assetPath)}/n/nIs not a valid Atlas');
                 }

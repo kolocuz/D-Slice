@@ -135,7 +135,7 @@ class SustainSplash extends FlxSprite
 			clipRect = null;
 			animation.finishCallback = idkEither -> kill();
 			return;
-		} else {
+		} {
 			trace(animation != null, note != null, note.strum != null);
  			kill();
 		}

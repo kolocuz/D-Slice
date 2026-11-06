@@ -699,7 +699,6 @@ class ModsMenuState extends MusicBeatState
 				changeSelectedButton();
 				return;
 			}
-			else // pressed down on last mod
 			{
 				curSelectedMod = lastSelected;
 				hoveringOnMods = false;

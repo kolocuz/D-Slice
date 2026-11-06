@@ -1,0 +1,31 @@
+name: Build the game
+
+on:
+  push:
+    branches: [ main-dev ]
+  workflow_dispatch:
+
+jobs:
+  BuildCaches:
+    name: Desktop Cache
+    permissions: write-all
+    uses: ./.github/workflows/dependencies.yml
+    with:
+      os: windows-2022
+      CACHE_NAME: K-Slice2.desktop-cache
+      setupScript: cmd /c "cd setup && call windows.bat"
+
+  BuildDesktop:
+    name: Windows
+    needs: BuildCaches
+    permissions: write-all
+    uses: ./.github/workflows/build.yml
+    with:
+      name: Windows
+      os: windows-2022
+      buildArgs: windows
+      exportPath: windows
+      artifactName: K-Slice_0.0.1_windows
+      artifactPath: export\release\windows\bin\*
+      cachePath: K-Slice2.build-windows
+      cacheLibrariesPath: K-Slice2.desktop-cache

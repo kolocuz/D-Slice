@@ -547,7 +547,6 @@ class ScreenshotPlugin extends FlxBasic
           unsavedScreenshotNameBuffer.shift();
           return;
         }
-        else
         {
           trace('Saving screenshot to: ' + targetPath);
           FileUtil.writeBytesToPath(targetPath, pngData);
@@ -567,7 +566,6 @@ class ScreenshotPlugin extends FlxBasic
         previousScreenshotName = null;
         return;
       }
-      else
       {
         trace('Saving screenshot to: ' + targetPath);
         FileUtil.writeBytesToPath(targetPath, pngData);

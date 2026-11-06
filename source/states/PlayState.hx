@@ -2129,7 +2129,7 @@ static function set_loaded(value:Bool):Bool {
 							ghostNotesCaught++;
 							(ghostDensity && !worldRecordMode) ? swagNote.density++ : swagNote.density = 1;
 							continue;
-						} else {
+						} {
 							strumTimeVector[chartNoteData] = strumTime;
 						}
 					}
@@ -5391,7 +5391,9 @@ static function set_loaded(value:Bool):Bool {
 		}
 
 		var lastCombo:Float = combo;
-		combo = 0;
+if (!changePopup) {
+    combo = 0;
+}
 
 		if (opponentChart)
 		    health += subtract * healthLoss;

@@ -1666,7 +1666,7 @@ class FreeplayState extends MusicBeatSubstate
 					curCapsule.favIconBlurred.animation.play('fav');
 					FunkinSound.playOnce(Paths.sound('fav'), 1);
 					curCapsule.checkClip();
-					curCapsule.selected = curCapsule.selected; // set selected again, so it can run it's getter function to initialize movement
+					 // set selected again, so it can run it's getter function to initialize movement
 					busy = true;
 
 					curCapsule.doLerp = false;
@@ -1776,7 +1776,7 @@ class FreeplayState extends MusicBeatSubstate
 		// ? new tags
 		var up = controls.UI_UP #if TOUCH_CONTROLS_ALLOWED || touchPad?.buttonUp.pressed #end;
 		var down = controls.UI_DOWN #if TOUCH_CONTROLS_ALLOWED || touchPad?.buttonDown.pressed #end;
-		if ((up || down))
+		if (up || down)
 		{
 			missingText.visible = false;
 			missingTextBG.visible = false;
