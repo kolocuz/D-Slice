@@ -17,6 +17,7 @@ class MainMenuState extends MusicBeatState
 	public static var funkinVersion:String = '0.7.4'; // Version of funkin' we are emulationg
 	public static var hrkVersion:String = '0.2.4'; // Version of H-Slice
 	public static var dSliceVersion:String = '0.0.2'; // Version of D-Slice
+	public static var kSliceVersion:String = '0.0.1'; // Version of K-Slice
 	public static var curSelected:Int = 0;
 
 	var menuItems:FlxTypedGroup<FlxSprite>;
@@ -69,30 +70,35 @@ class MainMenuState extends MusicBeatState
 		add(magenta);
 
 		var padding:Float = 8;
+                var ksliceVer:FlxText = new FlxText(padding, FlxG.height - 118 - padding, FlxG.width, 'K-Slice v${kSliceVersion}', 12);
 		var dsliceVer:FlxText = new FlxText(padding, FlxG.height - 98 - padding, FlxG.width, 'D-Slice v${dSliceVersion}', 12);
 		var hrkVer:FlxText = new FlxText(padding, FlxG.height - 78 - padding, FlxG.width, 'H-Slice+JS v' + hrkVersion, 12);
 		var psliceVer:FlxText = new FlxText(padding, FlxG.height - 58 - padding, FlxG.width, 'P-Slice v${pSliceVersion}', 12);
 		var psychVer:FlxText = new FlxText(padding, FlxG.height - 38 - padding, FlxG.width, 'Psych Engine v' + psychEngineVersion, 12);
 		var fnfVer:FlxText = new FlxText(padding, FlxG.height - 18 - padding, FlxG.width, 'Friday Night Funkin\' v${funkinVersion}', 12);
 
+                ksliceVer.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		dsliceVer.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		hrkVer.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		psliceVer.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		psychVer.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		fnfVer.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		
+                ksliceVer.scrollFactor.set();
 		dsliceVer.scrollFactor.set();
 		hrkVer.scrollFactor.set();
 		psliceVer.scrollFactor.set();
 		psychVer.scrollFactor.set();
 		fnfVer.scrollFactor.set();
 		
+                ksliceVer.antialiasing = ClientPrefs.data.antialiasing;
 		dsliceVer.antialiasing = ClientPrefs.data.antialiasing;
 		hrkVer.antialiasing = ClientPrefs.data.antialiasing;
 		psliceVer.antialiasing = ClientPrefs.data.antialiasing;
 		psychVer.antialiasing = ClientPrefs.data.antialiasing;
 		fnfVer.antialiasing = ClientPrefs.data.antialiasing;
 
+                add(ksliceVer);
 		add(dsliceVer);
 		add(hrkVer);
 		add(psliceVer);
