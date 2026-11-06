@@ -3905,11 +3905,13 @@ static function set_loaded(value:Bool):Bool {
 			if (drainAccuracy > 0)
 				diffMin = Math.min(diffMin, drainAccuracy);
 
-			while (diffMin > 0)
-			{
-				health = (health + hitHealth) * loseHealth;
-				--diffMin;
-			}
+            if (healthDrain) {
+                while (diffMin > 0) {
+                    health = (health + hitHealth) * loseHealth;
+                    --diffMin;
+                }
+            }
+
 
 			if (opponentChart)
 			{
