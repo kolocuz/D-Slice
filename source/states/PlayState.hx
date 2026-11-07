@@ -2701,7 +2701,7 @@ static function set_loaded(value:Bool):Bool {
 			#if desktop
 			if (ffmpegMode) {
 				if (video.wentPreview == null) {
-					botplayTxt.text = botplaySineCnt % 2 == 0 ? "RENDERED" : "BY H-SLICE+JS";
+					botplayTxt.text = botplaySineCnt % 2 == 0 ? "RENDERED" : "BY K-SLICE";
 				} else {
 					botplayTxt.text = botplaySineCnt % 2 == 0 ? "Rendering was cancelled by: " : video.wentPreview;
 				}
@@ -3159,19 +3159,22 @@ static function set_loaded(value:Bool):Bool {
 		#if desktop
 		if (ffmpegMode && !previewRender)
 		{
-			try {
-				video.pipeFrame();
-			} catch (e) {
-				video.wentPreview = e.message;
-				previewRender = true;
-				botplayTxt.size = Math.round(botplayTxt.size * 0.8);
-			}
+			if (Conductor.songPosition >= 0 && Conductor.songPosition <= FlxG.sound.music.length)
+			{
+				try {
+					video.pipeFrame();
+				} catch (e) {
+					video.wentPreview = e.message;
+					previewRender = true;
+					botplayTxt.size = Math.round(botplayTxt.size * 0.8);
+				}
 
-			if (gcRate != 0 && frameCount % gcRate == 0) {
-				if (ClientPrefs.data.disableGC) MemoryUtil.enable();
-				MemoryUtil.collect(gcMain);
-				if (gcMain) MemoryUtil.compact();
-				if (ClientPrefs.data.disableGC) MemoryUtil.disable();
+				if (gcRate != 0 && frameCount % gcRate == 0) {
+					if (ClientPrefs.data.disableGC) MemoryUtil.enable();
+					MemoryUtil.collect(gcMain);
+					if (gcMain) MemoryUtil.compact();
+					if (ClientPrefs.data.disableGC) MemoryUtil.disable();
+				}
 			}
 		}
 		#end
